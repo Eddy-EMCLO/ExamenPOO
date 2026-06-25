@@ -1,10 +1,7 @@
-# Épreuve — Centrale de réservation d'hébergements
+# Test de fin de module — Centrale de réservation d'hébergements
 
-Programmation Orientée Objet — EICPN 2025-2026
----
 
-## Rappel : vous pouvez vous servir de vos notes de cours, de vos ateliers, et de toutes autres ressources *utilisées en classe*
-## MAIS PAS : de votre téléphone, ni d'une IA.
+## Rappel : vous pouvez vous servir de vos notes de cours, de vos ateliers, et de toutes autres ressources *utilisées en classe* MAIS PAS : de votre téléphone, ni d'une IA.
 
 ## En deux mots
 
@@ -325,8 +322,7 @@ Vérifiez bien le sens de la demande :
 - **base** (la destination) = **ce dépôt-ci**, le dépôt d'origine ;
 - **compare** (la source) = **votre fork**.
 
-Validez : votre travail est rendu. Vous pouvez continuer à *pousser* des
-commits après coup ; ils s'ajoutent automatiquement à la pull request.
+Validez : votre travail est rendu. Vous avez jusqu'à 21h00 dernier délai
 
 ---
 
