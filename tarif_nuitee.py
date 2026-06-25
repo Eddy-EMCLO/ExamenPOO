@@ -30,32 +30,43 @@ class TarifNuitee:
         #     une valeur négative -> ValueError. Le ranger sous forme de
         #     nombre réel (float).
         #   - devise : la chaîne de la devise (valeur par défaut "EUR").
-        ...
+        if not isinstance(montant, (int, float)) or isinstance(montant, bool):
+            raise TypeError("le montant doit être un nombre")
+        if montant < 0:
+            raise ValueError("le montant doit être un nombre positif ou nul")
+        self._montant = float(montant)
+        self._devise = devise
 
     @property
     def montant(self):
-        ...
+        return self._montant
 
     @property
     def devise(self):
-        ...
+        return self._devise
 
     def __eq__(self, autre):
         # Deux tarifs sont égaux s'ils ont le MÊME montant ET la MÊME
         # devise. Si « autre » n'est pas un TarifNuitee, renvoyer
         # NotImplemented.
-        ...
+        if not isinstance(autre, TarifNuitee):
+            return NotImplemented
+        return self.montant == autre.montant and self.devise == autre.devise
 
     def __hash__(self):
         # Cohérent avec __eq__ : fondé sur le couple (montant, devise).
-        ...
+        return hash((self.montant, self.devise))
 
     def __lt__(self, autre):
         # Comparer deux tarifs (« plus petit que »). La comparaison n'a de
         # sens qu'entre MÊMES devises : si les devises diffèrent, lever
         # ValueError. Si « autre » n'est pas un TarifNuitee, renvoyer
         # NotImplemented.
-        ...
+        if not isinstance(autre, TarifNuitee):
+            return NotImplemented
+        if self.devise != autre.devise:
+            raise ValueError("devises différentes")
+        return self.montant < autre.montant
 
     def __add__(self, autre):
         # Additionner deux tarifs de MÊME devise et renvoyer un NOUVEAU
@@ -63,13 +74,17 @@ class TarifNuitee:
         # différentes -> ValueError. Si « autre » n'est pas un TarifNuitee,
         # renvoyer NotImplemented (additionner un tarif et un simple nombre
         # doit échouer, pas réussir en silence).
-        ...
+        if not isinstance(autre, TarifNuitee):
+            return NotImplemented
+        if self.devise != autre.devise:
+            raise ValueError("devises différentes")
+        return TarifNuitee(self.montant + autre.montant, self.devise)
 
     def __str__(self):
         # Texte lisible, par exemple « 85.50 EUR » (deux décimales).
         # Format exact donné par les tests.
-        ...
+        return f"{self.montant:.2f} {self.devise}"
 
     def __repr__(self):
         # Texte reconstructible, par exemple TarifNuitee(85.5, 'EUR').
-        ...
+        return f"TarifNuitee({self.montant}, '{self.devise}')"
