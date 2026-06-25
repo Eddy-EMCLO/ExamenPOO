@@ -1,0 +1,12 @@
+# Fichiers générés par Python : ne jamais les versionner.
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Fichiers d'environnement et d'éditeur
+.venv/
+venv/
+.idea/
+.vscode/
+*.swp
+.DS_Store
