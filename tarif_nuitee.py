@@ -1,7 +1,7 @@
 # tarif_nuitee.py - À COMPLÉTER
 #
 # Ce fichier contient l'objet-valeur TarifNuitee : un montant associé à
-# une devise (par exemple 85,50 EUR).
+# une devise (par exemple 85.50 EUR).
 #
 # La différence avec un hébergement est importante :
 #   - un hébergement a une IDENTITÉ (son code) : deux hébergements de même

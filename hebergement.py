@@ -37,6 +37,7 @@ class Hebergement:
         # À contrôler, dans l'ordre :
         #   - nom et localite : des chaînes de caractères, non vides ;
         #   - code_reservation : valide au sens de code_valide (plus bas) ;
+        #     si le code n'est pas valide, lever ValueError ;
         #   - capacite_personnes : un entier (PAS un booléen) dans les
         #     bornes indiquées par l'énoncé et les tests ;
         #   - annee_construction : un entier (PAS un booléen) dans les

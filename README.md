@@ -122,6 +122,13 @@ point clé : à la relecture, **chaque hébergement retrouve son type exact**
 (un gîte redevient un `Gite`). C'est le champ `"type"` et le **registre**
 `_FABRIQUES` qui rendent cela possible.
 
+> **Déjà vu ?** Cette structure (une entité identifiée par un code, des
+> sous-classes qui enrichissent ou remplacent, un objet-valeur, un
+> conteneur, une persistance JSON) est exactement celle de la
+> **bibliothèque** vue en cours et de l'épreuve précédente (la **flotte**
+> de véhicules). Le fichier **`PARALLELES.md`** met ces trois domaines
+> côte à côte : le lire avant de commencer peut beaucoup vous aider.
+
 ---
 
 ## Tableau des attentes (spécification)
@@ -135,9 +142,15 @@ indicatives : ce sont les attentes exactes.
 |---|---|---|---|---|
 | `nom` | chaîne | non vide | `TypeError` | `ValueError` |
 | `localite` | chaîne | non vide | `TypeError` | `ValueError` |
-| `code_reservation` | chaîne | 17 caractères, lettres et chiffres uniquement | — | `ValueError` |
+| `code_reservation` | chaîne | 17 caractères, lettres et chiffres uniquement | `ValueError` | `ValueError` |
 | `capacite_personnes` | entier (booléen **refusé**) | de 1 à 50 inclus | `TypeError` | `ValueError` |
 | `annee_construction` | entier (booléen **refusé**) | de 1800 à 2026 inclus | `TypeError` | `ValueError` |
+
+> **Cas particulier du code de réservation.** Contrairement aux autres
+> données, le code est entièrement validé par la méthode `code_valide`,
+> qui renvoie `False` pour toute entrée incorrecte — y compris une valeur
+> qui n'est même pas du texte. Une construction avec un code invalide lève
+> donc **`ValueError`** dans tous les cas (et non `TypeError`).
 
 ### `Gite(... , nombre_chambres)`
 
