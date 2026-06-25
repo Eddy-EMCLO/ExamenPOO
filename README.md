@@ -1,8 +1,10 @@
 # Épreuve — Centrale de réservation d'hébergements
 
-Programmation Orientée Objet — EICPN, Enseignement pour Adultes
-
+Programmation Orientée Objet — EICPN 2025-2026
 ---
+
+## Rappel : vous pouvez vous servir de vos notes de cours, de vos ateliers, et de toutes autres ressources *utilisées en classe*
+## MAIS PAS : de votre téléphone, ni d'une IA.
 
 ## En deux mots
 
